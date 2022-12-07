@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
-body{
+body {
     background-image: url(../img/download.jpg);
     background-size: cover;
     font-family: "Poppins", sans-serif;
@@ -22,45 +22,46 @@ label {
     letter-spacing: 0.2em;
     width: 80%;
     margin-left: 3px;
-    }
+}
+
 .help-block.with-errors {
     color: #ff5050;
     margin-top: 5px;
 
 }
 
-.card{
-	margin-left: 10px;
-	margin-right: 10px;
+.card {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.kiri{
+.kiri {
     font-size: small;
 }
 
-.breadcrumbs li{
+.breadcrumbs li {
     list-style-type: none;
     display: inline-block;
 }
 
-.breadcrumbs .arrow{
+.breadcrumbs .arrow {
     margin: 0 20px;
 }
 
-.bold { 
-    font-weight: bold; 
+.bold {
+    font-weight: bold;
 }
 
-.sustify{
+.sustify {
     text-align: justify;
 }
 
 .card-title {
     font-size: small;
-    text-align:left ;
+    text-align: left;
     /* color:#D8D9CF; */
 }
 
-.card{
+.card {
     width: fit-content;
 }

@@ -92,29 +92,35 @@
                                                         </thead>
                                                         <tbody>
                                                             @foreach ($laptops as $laptop)
-                                                                <tr>
-                                                                    <td>{{$laptop['nis']}}</td>
-                                                                    <td>{{$laptop['nama']}}</td>
-                                                                    <td>{{$laptop['region']}}</td>
-                                                                    <td>{{$laptop['purposes']}}</td>
-                                                                    <td>{{$laptop['ket']}}</td>
-                                                                    <td>{{ \Carbon\Carbon::parse($laptop['date'])->format('j F, Y') }}</td>
-                                                                    <td>{{ \Carbon\Carbon::parse($laptop['done_time'])->format('j F, Y') }}</td>
-                                                                    <td>{{$laptop['teacher']}}</td>
-                                                                    <td><a href="/edit/{{$laptop['id']}}"
-                                                                            class="fas fa-pen text-dark btn"></a>
-                                                                        <form action="{{ route('delete', $laptop['id']) }}" method="POST">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <button class="fas fa-trash text-danger btn"></button>
-                                                                        </form>
-                                                                        <form action="/complated/{{$laptop['id']}}" method="POST">
-                                                                            @csrf
-                                                                            @method('PATCH')
-                                                                            <button type="submit" class="fa-solid fa-check-to-slot text-primary btn"></button>
-                                                                        </form>
-                                                                    </td>
-                                                                </tr>
+                                                            <tr>
+                                                                <td>{{$laptop['nis']}}</td>
+                                                                <td>{{$laptop['nama']}}</td>
+                                                                <td>{{$laptop['region']}}</td>
+                                                                <td>{{$laptop['purposes']}}</td>
+                                                                <td>{{$laptop['ket']}}</td>
+                                                                <td>{{ \Carbon\Carbon::parse($laptop['date'])->format('j F, Y') }}
+                                                                </td>
+                                                                <td>{{ is_null($laptop['done_time']) ? '-' : \Carbon\Carbon::parse($laptop['done_time'])->format('j F, Y') }}
+                                                                </td>
+                                                                <td>{{$laptop['teacher']}}</td>
+                                                                <td><a href="/edit/{{$laptop['id']}}"
+                                                                        class="fas fa-pen text-dark btn"></a>
+                                                                    <form action="{{ route('delete', $laptop['id']) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button
+                                                                            class="fas fa-trash text-danger btn"></button>
+                                                                    </form>
+                                                                    <form action="/complated/{{$laptop['id']}}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('PATCH')
+                                                                        <button type="submit"
+                                                                            class="fa-solid fa-check-to-slot text-primary btn"></button>
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
                                                             @endforeach
                                                         </tbody>
                                                     </table>

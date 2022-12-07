@@ -30,28 +30,32 @@
                                         <div class="form-group">
                                             <label for="form_name">Nis</label>
                                             <input id="form_name" type="text" name="nis" class="form-control"
-                                                required="required" data-error="Firstname is required." value="{{$laptop['nis']}}">
+                                                required="required" data-error="Firstname is required."
+                                                value="{{$laptop['nis']}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form_name">Name</label>
                                             <input id="form_name" type="text" name="nama" class="form-control"
-                                                required="required" data-error="Firstname is required." value="{{$laptop['nama']}}">
+                                                required="required" data-error="Firstname is required."
+                                                value="{{$laptop['nama']}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form_name">Region</label>
                                             <input id="form_name" type="text" name="region" class="form-control"
-                                                required="required" data-error="Firstname is required." value="{{$laptop['region']}}">
+                                                required="required" data-error="Firstname is required."
+                                                value="{{$laptop['region']}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form_name">Teacher</label>
                                             <input id="form_name" type="text" name="teacher" class="form-control"
-                                                required="required" data-error="Firstname is required." value="{{$laptop['teacher']}}">
+                                                required="required" data-error="Firstname is required."
+                                                value="{{$laptop['teacher']}}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -59,7 +63,8 @@
                                             <label for="form_message">Purposes</label>
                                             <textarea id="form_message" name="purposes" class="form-control"
                                                 placeholder="Write your message here." rows="4" required="required"
-                                                data-error="Please, leave us a message." value="{{$laptop['purposes']}}"></textarea>
+                                                data-error="Please, leave us a message."
+                                                value="{{$laptop['purposes']}}"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -67,7 +72,8 @@
                                             <label for="form_message">Ket</label>
                                             <textarea id="form_message" name="ket" class="form-control"
                                                 placeholder="Write your message here." rows="4" required="required"
-                                                data-error="Please, leave us a message." value="{{$laptop['ket']}}"></textarea>
+                                                data-error="Please, leave us a message."
+                                                value="{{$laptop['ket']}}"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -81,8 +87,8 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <button type="submit" id="contactus-submit"
-                                                class="btn-success btn-lg btn" action="/">Submit</button>
+                                            <button type="submit" id="contactus-submit" class="btn-success btn-lg btn"
+                                                action="/">Submit</button>
                                             <a href="/" class="btn-dark btn-lg btn">Cancel</a>
                                         </div>
                                     </div>

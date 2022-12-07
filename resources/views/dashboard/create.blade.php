@@ -80,8 +80,8 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <button type="submit" id="contactus-submit"
-                                                class="btn-success btn-lg btn" action="/">Submit</button>
+                                            <button type="submit" id="contactus-submit" class="btn-success btn-lg btn"
+                                                action="/">Submit</button>
                                             <a href="/" class="btn-dark btn-lg btn">Cancel</a>
                                         </div>
                                     </div>
