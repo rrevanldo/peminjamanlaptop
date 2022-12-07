@@ -22,3 +22,5 @@ Route::get('/edit/{id}', [LaptopController::class, 'edit'])->name('edit');
 Route::patch('/update/{id}', [LaptopController::class, 'update'])->name('update');
 Route::get('/complated', [Laptop::class, 'complated'])->name('complated');
 Route::patch('/complated/{id}', [LaptopController::class, 'updateComplated'])->name('update-complated');
+
+Route::get('/data', [LaptopController::class, 'data'])->name('data');

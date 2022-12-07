@@ -16,6 +16,12 @@ class LaptopController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function data(Laptop $laptop)
+    {
+        //
+        return view('dashboard.data');
+    }
+
     // public function complated()
     // {
     //     $laptops = Laptop::where([

@@ -23,6 +23,11 @@
                                 {{ Session::get('successUpdate') }}
                             </div>
                             @endif
+                            @if (Session::get('done'))
+                            <div class="alert alert-success">
+                                {{ Session::get('done') }}
+                            </div>
+                            @endif
                             <div class="controls">
                                 <div class="row">
                                     <div class="d-flex">
