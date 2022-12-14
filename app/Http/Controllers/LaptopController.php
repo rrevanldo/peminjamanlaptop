@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Models\Laptop;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 
 class LaptopController extends Controller
@@ -16,31 +19,71 @@ class LaptopController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    
+     public function login()
+     {
+         return view('dashboard.login');
+     }
+ 
+     public function register()
+     {
+         return view('dashboard.register');
+     }
+
+     public function inputRegister(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'name' => 'required|min:4|max:50',
+            'username' => 'required|min:4|max:8',
+            'password' => 'required',
+        ]);
+        User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect('/')->with('success', 'berhasil membuat akun!');
+    }
+
+    public function auth(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|exists:users,username',
+            'password' => 'required',
+        ],[
+            'username.exists' => "This username doesn't exists"
+        ]);
+
+        $user = $request->only('username', 'password');
+        if (Auth::attempt($user)) {
+            return redirect()->route('dashboard.index');
+        } else {
+            return redirect('/')->with('fail', "Gagal login, periksa dan coba lagi!");
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
     public function data(Laptop $laptop)
     {
         //
         return view('dashboard.data');
     }
 
-    // public function complated()
-    // {
-    //     $laptops = Laptop::where([
-    //         ['id', '=', Auth::user()->id],
-    //         ['status', '=', 1],
-    //     ])->get();
-
-    //     return view('dashboard.index' , compact('laptops'));
-    // }
-
-    public function updateComplated($id)
+    public function complated()
     {
-        // $id pada parameter mengambil data dari path dinamis {id}
-        // cari data yang memiliki value column route, maka update baris data tersebut
-        Laptop::where('id', $id)->update([
-            'status' => 1,
-            'done_time' => Carbon::now(),
-        ]);
-        return redirect()->route('index')->with('done', 'Laptop Sudah dikembalikan!');
+        $laptops = Laptop::where([
+            ['id', '=', Auth::user()->id],
+            ['status', '=', 1],
+        ])->get();
+
+        return view('dashboard.index' , compact('laptops'));
     }
 
     public function index()
@@ -89,7 +132,7 @@ class LaptopController extends Controller
             'status' => 0,
             'done_time' => NULL,
         ]);
-        return redirect()->route('index')->with('successAdd','Berhasil menambahkan data Peminjaman Laptop!');
+        return redirect()->route('dashboard.index')->with('successAdd','Berhasil menambahkan data Peminjaman Laptop!');
     }
 
     /**
@@ -145,7 +188,17 @@ class LaptopController extends Controller
             'status' => 0,
         ]);
         //kalau berhasil bakal diarahkan ke halaman awal todo dengan pemberitahuan berhasil
-        return redirect()->route('index')->with('successUpdate', 'Data berhasil diperbaharui!');
+        return redirect('/dashboard/')->with('successUpdate', 'Data berhasil diperbaharui!');
+    }
+
+    public function updateComplated($id)
+    {
+        // 
+        Laptop::where('id', $id)->update([
+            'status' => 1,
+            'done_time' => Carbon::now(),
+        ]);
+        return redirect()->route('dashboard.index')->with('done', 'Laptop Sudah dikembalikan!');
     }
 
     /**
@@ -158,6 +211,6 @@ class LaptopController extends Controller
     {
         //
         Laptop::where('id', '=', $id)->delete();
-        return redirect()->route('index')->with('successDelete', 'Berhasil menghapus data Peminjaman Laptop!');
+        return redirect()->route('dashboard.index')->with('successDelete', 'Berhasil menghapus data Peminjaman Laptop!');
     }
 }

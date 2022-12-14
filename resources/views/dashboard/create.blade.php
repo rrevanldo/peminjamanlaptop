@@ -14,7 +14,7 @@
             <div class="card mt-2 mx-auto p-4 bg-light">
                 <div class="card-body bg-light">
                     <div class="container">
-                        <form method="POST" action="/store" id="create-form">
+                        <form method="POST" action="/dashboard/store" id="create-form">
                             @csrf
                             <div class="landing py-3 "><b>Laptop Landing</b></div>
                             <p class="py-0">new data</p>

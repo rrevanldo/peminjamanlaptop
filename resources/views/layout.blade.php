@@ -17,22 +17,28 @@
     <title>Peminjaman Laptop</title>
 </head>
 
-{{-- <body>
+<body>
+    @if (Auth::check())
     <nav class="navbar navbar-expand-lg" style="background: #fff">
-        <div class="col-md-12">
-            <div class="d-flex justify-content-between">
-                <div class="kiri">
-                    <p>Lab. RPL/PPLG</p>
-                    <p>Laptop Lending</p>
-                </div>
-
-                <div class="kanan">
-                    <img src="{{asset('assets/img/rpl.jpg')}}" class="rounded-circle" width="35">
-<img src="{{asset('assets/img/wikrama.png')}}" class="rounded-circle" width="35">
-</div>
-</div>
-</div>
-</nav> --}}
+        <a class="navbar-brand" href="#" style=" color :#000">Peminjaman Laptop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto navbar-right-top">    
+                <li class="nav-item dropdown nav-user">
+                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   <p class="mb-0 nav-user-name" style="color: #000">{{ Auth::user()->name }}</p></a>
+                    <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                        <a class="dropdown-item" href="/logout">
+                            <i class="fas fa-power-off mr-2"></i>Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    @endif
+</body>
 
 
 

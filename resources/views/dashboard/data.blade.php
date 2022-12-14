@@ -10,7 +10,7 @@
                         <div class="container">
                             <div class="controls">
                                 <div class="row">
-                                    <div class="d-flex">
+                                    <div class="d-flex">        
                                         <div class="kiri">
                                             <p>Lab. RPL/PPLG</p>
                                             <p>Laptop Lending</p>
@@ -37,12 +37,12 @@
                                     <div class="col-lg-12 grid-margin stretch-card">
                                         <div class="card">
 
-                                                <div class="card-body">
+                                                <div class="card-bodyx">
                                                     <h4 class="card-title">Laptop Landing data</h4>
                                                     <h4 class="card-title">Data sort by date loaned</h4>
                                                 </div>
                                             <div>
-                                                {{!is_null($todos) ? count($todos) : '-' }} complated todos
+                                                {{-- {{!is_null($todos) ? count($todos) : '-' }} complated todos --}}
                                             </div>
                                         </div>
                                     </div>

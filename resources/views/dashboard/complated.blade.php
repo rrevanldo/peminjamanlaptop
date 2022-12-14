@@ -120,7 +120,8 @@
                                                                         <button
                                                                             class="fas fa-trash text-danger btn"></button>
                                                                     </form>
-                                                                    <form action="/dashboard/complated/{{$laptop['id']}}" method="POST">
+                                                                    <form action="/dashboard/complated/{{$laptop['id']}}"
+                                                                        method="POST">
                                                                         @csrf
                                                                         @method('PATCH')
                                                                         <button type="submit" class="fa-solid fa-check-to-slot text-primary btn"></button>

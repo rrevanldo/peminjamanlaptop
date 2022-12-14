@@ -14,7 +14,7 @@
             <div class="card mt-2 mx-auto p-4 bg-light">
                 <div class="card-body bg-light">
                     <div class="container">
-                        <form method="POST" action="{{route('update', $laptop['id'])}}" id="create-form">
+                        <form method="POST" action="{{route('dashboard.update', $laptop['id'])}}" id="create-form">
                             @csrf
                             @method('PATCH')
                             <div class="landing py-3 "><b>Laptop Landing</b></div>
