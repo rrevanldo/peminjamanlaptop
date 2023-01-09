@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('status');
             $table->date('done_time')->nullable();
             $table->timestamps();
-        });
+        }); 
     }
 
     /**

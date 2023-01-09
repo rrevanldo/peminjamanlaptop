@@ -19,7 +19,11 @@ class LaptopController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+     public function data()
+     {
+         return view('dashboard.data');
+     }
+
      public function login()
      {
          return view('dashboard.login');
@@ -70,12 +74,6 @@ class LaptopController extends Controller
         return redirect('/');
     }
 
-    public function data(Laptop $laptop)
-    {
-        //
-        return view('dashboard.data');
-    }
-
     public function complated()
     {
         $laptops = Laptop::where([
@@ -89,7 +87,9 @@ class LaptopController extends Controller
     public function index()
     {
         $laptops = Laptop::all();
-        return view('dashboard.index' , compact('laptops'));
+        $hitung = Laptop::where('done_time', '=', null)->get();
+        $hitungs = Laptop::where('done_time', '<>', null)->get();
+        return view('dashboard.index' , compact('laptops', 'hitung', 'hitungs'));
     }
     
     /**

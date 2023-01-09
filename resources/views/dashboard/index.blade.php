@@ -55,7 +55,7 @@
                                     <li class="arrow">>></li>
                                     <li><a href="{{route('dashboard.create')}}" class="text-dark">New</a></li>
                                     <li class="arrow">>></li>
-                                    <li><a href="{{route('dashboard.index')}}" class="text-success">Data</a></li>
+                                    <li><a href="{{route('dashboard.data')}}" class="text-success">Data</a></li>
                                 </div>
 
                                 <div class="row" style="margin-top: 20px; margin-right: 20px;">
@@ -65,7 +65,10 @@
                                             <div class="card-body">
                                                 <h4 class="card-title">Laptop Landing data</h4>
                                                 <h4 class="card-title">Data sort by date loaned</h4>
-                                                <div>
+                                                <div class="card 2">
+                                                    {{ $hitung->count() }}
+                                                </div>
+
                                                     <table class="table table-striped" id="table" style="width: 50px">
                                                         <thead>
                                                             <tr>

@@ -38,13 +38,11 @@
         </div>
     </nav>
     @endif
-</body>
 
-
-
-
-{{-- konten tambahan di berbagai halaman --}}
-@yield('content')
+    <div class="container mt-5">
+        {{-- konten tambahan di berbagai halaman --}}
+            @yield('content')
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -61,5 +59,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
 </script>
-
+</body>
 </html>

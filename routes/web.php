@@ -24,13 +24,13 @@ Route::middleware('isGuest')->group(function () {
 Route::get('/logout', [LaptopController::class, 'logout'])->name('logout');
 
 Route::middleware('isLogin')->prefix('/dashboard')->name('dashboard.')->group(function () {
-Route::get('/', [LaptopController::class, 'index'])->name('index');
-Route::get('/data', [LaptopController::class, 'data'])->name('data');
-Route::get('/create', [LaptopController::class, 'create'])->name('create');
-Route::post('/store', [LaptopController::class, 'store'])->name('store');
-Route::delete('/delete/{id}', [LaptopController::class, 'destroy'])->name('delete');
-Route::get('/edit/{id}', [LaptopController::class, 'edit'])->name('edit');
-Route::patch('/update/{id}', [LaptopController::class, 'update'])->name('update');
-Route::get('/complated', [Laptop::class, 'complated'])->name('complated');
-Route::patch('/complated/{id}', [LaptopController::class, 'updateComplated'])->name('update-complated');
+    Route::get('/', [LaptopController::class, 'index'])->name('index');
+    Route::get('/data', [LaptopController::class, 'data'])->name('data');
+    Route::get('/create', [LaptopController::class, 'create'])->name('create');
+    Route::post('/store', [LaptopController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [LaptopController::class, 'destroy'])->name('delete');
+    Route::get('/edit/{id}', [LaptopController::class, 'edit'])->name('edit');
+    Route::patch('/update/{id}', [LaptopController::class, 'update'])->name('update');
+    Route::get('/complated', [LaptopController::class, 'complated'])->name('complated');
+    Route::patch('/complated/{id}', [LaptopController::class, 'updateComplated'])->name('update-complated');
 });         
